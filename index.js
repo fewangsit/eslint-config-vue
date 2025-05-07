@@ -1,4 +1,8 @@
 import cypress from "./rules/cypress";
+import _import from "./rules/import";
+import prettier from "./rules/prettier";
+import sortImport from "./rules/sort-import";
+import typescript from "./rules/typescript";
 import vue from "./rules/vue";
 
 module.exports = {
@@ -7,6 +11,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  plugins: ["@typescript-eslint", "vue", "simple-import-sort"],
   extends: [
     "@vue/typescript/recommended",
     "eslint:recommended",
@@ -25,6 +30,18 @@ module.exports = {
     withDefaults: "readonly",
   },
   ignorePatterns: ["dist"],
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
+  },
+  rules: {
+    ...vue,
+    ...typescript,
+    ...sortImport,
+    ...prettier,
+    ..._import,
+  },
   overrides: [
     {
       extends: ["plugin:cypress/recommended"],
@@ -50,83 +67,4 @@ module.exports = {
       },
     },
   ],
-  parser: "vue-eslint-parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
-  },
-  plugins: ["@typescript-eslint", "vue"],
-  rules: {
-    "@typescript-eslint/explicit-function-return-type": "error",
-    "@typescript-eslint/explicit-module-boundary-types": "error",
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        format: ["PascalCase"],
-        selector: "interface",
-      },
-      {
-        format: ["PascalCase"],
-        selector: "typeAlias",
-      },
-      {
-        format: ["camelCase", "UPPER_CASE", "PascalCase"],
-        selector: "variable",
-      },
-      {
-        format: ["PascalCase"],
-        selector: "typeLike",
-      },
-      {
-        format: ["camelCase"],
-        selector: "function",
-      },
-    ],
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-non-null-assertion": "error",
-    "@typescript-eslint/no-shadow": "error",
-    "camelcase": "error",
-    "capitalized-comments": "error",
-    "complexity": ["error", 50],
-    "default-param-last": "error",
-    "func-style": ["error", "expression"],
-    "multiline-comment-style": "error",
-    "no-console": [
-      "error",
-      {
-        allow: ["error"],
-      },
-    ],
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
-    "no-duplicate-imports": "error",
-    "no-else-return": "error",
-    "no-empty-function": "error",
-    "no-nested-ternary": "error",
-    "no-shadow": "error",
-    "no-unneeded-ternary": "error",
-    "no-useless-return": "error",
-    "no-var": "error",
-    "operator-assignment": "error",
-    "prefer-const": "error",
-    "prefer-destructuring": [
-      "error",
-      { array: false, object: true },
-      { enforceForRenamedProperties: false },
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        endOfLine: "auto",
-        quoteProps: "consistent",
-        semi: true,
-        singleQuote: true,
-        tabWidth: 2,
-        useTabs: false,
-      },
-    ],
-    "promise/prefer-await-to-callbacks": "error",
-    "promise/prefer-await-to-then": "error",
-    "quotes": ["error", "single", { avoidEscape: true }],
-    ...vue,
-  },
 };
