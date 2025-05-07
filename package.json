@@ -1,43 +1,32 @@
 {
-  "name": "@fewangsit/eslint-config-code-standard",
-  "version": "1.0.21",
+  "name": "@fewangsit/eslint-config-vue",
+  "version": "1.0.0",
   "description": "A shareable ESLint configuration for standardized TypeScript code for Wangsti FE Developers.",
-  "main": "index.js",
+  "main": "eslint.config.js",
+  "type": "module",
   "author": "fewangsit",
   "license": "proprietary",
   "scripts": {
-    "build": "esbuild index.js --bundle --format=cjs --outfile=dist/index.js",
-    "lint": "eslint --ext js,ts,tsx",
+    "build": "esbuild eslint.config.js --bundle --platform=node --format=esm --outfile=dist/eslint.config.js",
+    "lint": "eslint --ext js,ts,tsx --fix",
     "release": "sh ./scripts/release.sh"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "8.0.1",
-    "@typescript-eslint/parser": "8.0.1",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "8.0.0",
-    "eslint-plugin-css": "0.8.1",
-    "eslint-plugin-cypress": "2.15.1",
-    "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-simple-import-sort": "12.1.1",
-    "eslint-plugin-vue": "9.32.0",
-    "typescript": "5.5.4"
+    "eslint": "9.26.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "8.0.1",
-    "@typescript-eslint/parser": "8.0.1",
-    "esbuild": "^0.14.0",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "8.0.0",
-    "eslint-config-ts-code-standard": "^1.0.9",
-    "eslint-plugin-css": "0.8.1",
-    "eslint-plugin-cypress": "2.15.1",
-    "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-promise": "5.1.0",
+    "@eslint/js": "9.26.0",
+    "esbuild": "0.14.0",
+    "eslint": "9.26.0",
+    "eslint-config-prettier": "10.1.2",
+    "eslint-plugin-css": "0.11.0",
+    "eslint-plugin-cypress": "4.3.0",
+    "eslint-plugin-prettier": "5.4.0",
+    "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-simple-import-sort": "12.1.1",
-    "eslint-plugin-vue": "9.32.0",
-    "typescript": "5.5.4"
+    "eslint-plugin-vue": "10.1.0",
+    "jiti": "2.4.2",
+    "typescript": "5.5.4",
+    "typescript-eslint": "^8.32.0"
   }
 }
