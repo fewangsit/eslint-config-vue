@@ -1,0 +1,47 @@
+{
+  "name": "@fewangsit/eslint-config-vue-code-standard",
+  "version": "1.0.0",
+  "description": "A shareable ESLint configuration for standardized Vue TypeScript code for Wangsti FE Developers.",
+  "type": "module",
+  "main": "index.js",
+  "author": "fewangsit",
+  "license": "proprietary",
+  "scripts": {
+    "build": "esbuild index.js --bundle --platform=node --packages=external --format=cjs --outfile=dist/index.cjs && esbuild index.js --bundle --platform=node --packages=external --format=esm --outfile=dist/index.js",
+    "lint": "eslint .",
+    "release": "sh ./scripts/release.sh"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=8.52.0",
+    "@typescript-eslint/parser": ">=8.52.0",
+    "eslint": ">=9.39.0",
+    "eslint-config-prettier": ">=10.1.0",
+    "eslint-import-resolver-typescript": ">=4.4.0",
+    "eslint-plugin-css": ">=0.11.0",
+    "eslint-plugin-cypress": ">=5.2.0",
+    "eslint-plugin-import": ">=2.31.0",
+    "eslint-plugin-prettier": ">=5.5.0",
+    "eslint-plugin-promise": ">=7.2.0",
+    "eslint-plugin-vue": ">=10.6.0",
+    "typescript": ">=5.5.0"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^2.0.0",
+    "@eslint/js": "^9.39.2",
+    "@typescript-eslint/eslint-plugin": "8.52.0",
+    "@typescript-eslint/parser": "8.52.0",
+    "esbuild": "^0.27.2",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-css": "0.11.1",
+    "eslint-plugin-cypress": "5.2.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-promise": "7.2.1",
+    "eslint-plugin-vue": "10.6.2",
+    "globals": "^17.0.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.52.0"
+  }
+}
