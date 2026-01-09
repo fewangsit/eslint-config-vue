@@ -29,7 +29,19 @@ export default {
   'vue/component-name-in-template-casing': [
     'error',
     'PascalCase',
-    { registeredComponentsOnly: false },
+    {
+      registeredComponentsOnly: false,
+      ignores: [
+        '/^transition/',
+        '/^keep-alive/',
+        '/^teleport/',
+        '/^suspense/',
+        '/^component/',
+        '/^slot/',
+        'router-view',
+        'router-link',
+      ],
+    },
   ],
   'vue/custom-event-name-casing': 'error',
   'vue/component-api-style': ['error', ['script-setup', 'composition']],
