@@ -1,6 +1,6 @@
 {
   "name": "@fewangsit/eslint-config-vue-code-standard",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "A shareable ESLint configuration for standardized Vue TypeScript code for Wangsti FE Developers.",
   "type": "module",
   "main": "index.js",
