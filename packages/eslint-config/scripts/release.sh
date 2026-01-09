@@ -12,4 +12,5 @@ npm link && npm publish --access public
 
 cd ../
 git add package.json
-git commit -m "chore: release v$(node -p \"require('./package.json').version\")"
+version=$(grep '"version"' package.json | sed -E 's/.*"version": "([^"]+)".*/\1/')
+git commit -m "chore: release v${version}"
