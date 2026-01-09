@@ -25,7 +25,14 @@ export default {
       order: ['script[setup]', 'script', 'template', 'style'],
     },
   ],
+  'vue/component-definition-name-casing': ['error', 'PascalCase'],
+  'vue/component-name-in-template-casing': [
+    'error',
+    'PascalCase',
+    { registeredComponentsOnly: false },
+  ],
   'vue/custom-event-name-casing': 'error',
+  'vue/component-api-style': ['error', ['script-setup', 'composition']],
   'vue/define-emits-declaration': ['error', 'type-based'],
   'vue/define-macros-order': [
     'error',
@@ -48,6 +55,13 @@ export default {
       math: 'always',
     },
   ],
+  'vue/match-component-file-name': [
+    'error',
+    {
+      extensions: ['vue'],
+      shouldMatchCase: true,
+    },
+  ],
   'vue/max-attributes-per-line': 'off',
   'vue/multi-word-component-names': 'off',
   'vue/new-line-between-multi-line-property': 'error',
@@ -55,6 +69,7 @@ export default {
   'vue/no-dupe-keys': 'error',
   'vue/no-export-in-script-setup': 'error',
   'vue/no-lone-template': 'error',
+  'vue/no-multi-spaces': 'error',
   'vue/no-reserved-component-names': 'error',
   'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
   'vue/no-static-inline-styles': ['error', { allowBinding: false }],
@@ -63,6 +78,29 @@ export default {
   'vue/no-useless-v-bind': [
     'error',
     { ignoreIncludesComment: false, ignoreStringEscape: false },
+  ],
+  'vue/order-in-components': [
+    'error',
+    {
+      order: [
+        ['props', 'propsData'],
+        'emits',
+        'model',
+        'slots',
+        ['components', 'directives', 'filters'],
+        'LIFECYCLE_HOOKS',
+        'ROUTER_GUARDS',
+        'inject',
+        'data',
+        'computed',
+        'provide',
+        'methods',
+        ['watch', 'watchQuery'],
+        ['template', 'render'],
+        'renderError',
+        'expose',
+      ],
+    },
   ],
   'vue/padding-line-between-blocks': ['error', 'always'],
   'vue/prefer-import-from-vue': 'error',
@@ -76,6 +114,8 @@ export default {
   ],
   'vue/require-typed-ref': 'error',
   'vue/singleline-html-element-content-newline': 'off',
+  'vue/this-in-template': ['error', 'never'],
+  'vue/v-bind-style': ['error', 'shorthand'],
   'vue/v-on-event-hyphenation': [
     'error',
     'always',
@@ -83,4 +123,6 @@ export default {
       autofix: true,
     },
   ],
+  'vue/v-on-style': ['error', 'shorthand'],
+  'vue/v-slot-style': ['error', 'shorthand'],
 };
