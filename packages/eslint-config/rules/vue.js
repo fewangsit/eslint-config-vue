@@ -49,10 +49,19 @@ export default {
   'vue/define-macros-order': [
     'error',
     {
-      order: ['defineProps', 'defineEmits', 'defineModel'],
+      order: [
+        'defineOptions',
+        'defineProps',
+        'defineEmits',
+        'defineModel',
+        'defineSlots',
+      ],
       defineExposeLast: true,
     },
   ],
+  'vue/no-import-compiler-macros': 'error',
+  'vue/no-multiple-objects-in-class': 'error',
+  'vue/no-negated-v-if-condition': 'error',
   'vue/define-props-declaration': ['error', 'type-based'],
   'vue/html-comment-content-newline': 'error',
   'vue/html-self-closing': [
@@ -87,6 +96,7 @@ export default {
   'vue/no-static-inline-styles': ['error', { allowBinding: false }],
   'vue/no-unused-emit-declarations': 'error',
   'vue/no-unused-refs': 'error',
+  'vue/no-use-v-else-with-v-for': 'error',
   'vue/no-useless-v-bind': [
     'error',
     { ignoreIncludesComment: false, ignoreStringEscape: false },
@@ -115,6 +125,10 @@ export default {
     },
   ],
   'vue/padding-line-between-blocks': ['error', 'always'],
+  'vue/padding-line-between-tags': [
+    'error',
+    [{ blankLine: 'always', prev: '*', next: '*' }],
+  ],
   'vue/prefer-import-from-vue': 'error',
   'vue/prefer-true-attribute-shorthand': ['error', 'always'],
   'vue/prop-name-casing': ['error', 'camelCase'],
