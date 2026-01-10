@@ -1,5 +1,6 @@
 import { fixupPluginRules } from '@eslint/compat';
 import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
 import css from 'eslint-plugin-css';
 import cypress from 'eslint-plugin-cypress';
 import importPlugin from 'eslint-plugin-import';
@@ -15,7 +16,7 @@ import vueRules from './rules/vue.js';
 
 const patchedImportPlugin = fixupPluginRules(importPlugin);
 
-export default tseslint.config(
+export default defineConfig(
   // Base configs
   js.configs.recommended,
   ...tseslint.configs.recommended,
