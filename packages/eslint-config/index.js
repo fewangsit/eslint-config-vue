@@ -121,7 +121,6 @@ export default defineConfig(
       'capitalized-comments': 'error',
       'complexity': ['error', 50],
       'default-param-last': 'error',
-      'func-style': ['error', 'expression'],
       'multiline-comment-style': 'error',
       'no-console': [
         'error',
