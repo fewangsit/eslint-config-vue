@@ -35,7 +35,10 @@ export default defineConfig(
     plugins: { import: patchedImportPlugin },
     settings: {
       'import/resolver': {
-        typescript: true,
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
         node: true,
       },
     },
